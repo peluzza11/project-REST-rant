@@ -1,12 +1,23 @@
 const React = require('react')
-const Def = require('../default')
+const Def = require('../default.jsx')
+
+function edit_form (data) {
+    return (
+        <Def>
+          ...
+        </Def>
+    )
+}
+
+module.exports = edit_form
+
 
 function new_form () {
     return (
         <Def>
           <main>
             <h1>Add a New Place</h1>
-            <form method="POST" action="/places">
+            <form method="POST" action={`/places/${data.place.id}?_method=PUT`}>
   <div className="form-group">
     <label htmlFor="name">Place Name</label>
     <input className="form-control" id="name" name="name" required />
