@@ -12,11 +12,11 @@ function home () {
   }
   
   function index (data) {
-    let placesFormatted = data.places.map((place, index) => {
+    let placesFormatted = data.places.map((place) => {
       return (
         <div className="col-sm-6">
           <h2>
-            <a href={`/places/${index}`} >
+            <a href={`/places/${place.id} ` } >
               {place.name}
             </a>
           </h2>
@@ -28,8 +28,11 @@ function home () {
             Located in {place.city}, {place.state}
           </p>
         </div>
+        
       )
     })
+    
+    
     
     return (
       <Def>
@@ -40,6 +43,12 @@ function home () {
       </Def>
   )
   }
+  
+  <div className="form-group">
+  <label for="founded">Founded Year</label>
+  <input className="form-control" id="founded" name="founded" />
+</div>
+
   
   
   
