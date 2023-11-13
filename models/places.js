@@ -1,4 +1,17 @@
 const mongoose = require('mongoose')
+router.get('/:id/edit', (req, res) => {
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      res.render('error404')
+  })
+})
+
+
+
+
 
 const placeSchema = new mongoose.Schema({
   name: { type: String, required: true },

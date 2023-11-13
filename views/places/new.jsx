@@ -55,15 +55,24 @@ function new_form () {
     name="founded" 
     value={new Date().getFullYear()} />
 </div>
-
-
-
-
-
-
           </main>
         </Def>
     )
 }
+
+let sumRatings = data.place.comments.reduce((tot, c) => {
+  return tot + c.stars
+}, 0)
+let averageRating = Math.round(sumRating / data.place.comments.lenght)
+let stars = ''
+for (let i=0; i <averageRating; i++) {
+  stars += '⭐'
+}
+rating = (
+  <h3>
+  {stars} stars
+  </h3>
+)
+
 
 module.exports = new_form
